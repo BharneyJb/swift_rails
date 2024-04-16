@@ -10,6 +10,17 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  int _currentIndex = 0;
+  List<Map<String, dynamic>> searchOptions = [
+    {
+      "body" : "One Way",
+      "action": "Next"
+    },
+    {
+      "body" : "Round Trip",
+      "action": "Next"
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +49,31 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ],
               ),
+              PageView.builder(
+                controller: PageController(initialPage: _currentIndex),
+                itemBuilder: (context, index) {
+                  return Container();
+                },
+              //   child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.center,
+              //         children: List.generate(
+              //           searchOptions.length,
+              //           (i) => Container(
+              //             width: (index == i) ? 40 : 16,
+              //             height: 16,
+              //             margin: EdgeInsets.only(left: 10),
+              //             decoration: BoxDecoration(
+              //                 color: (index == i)
+              //                     ? Color.fromRGBO(64, 1, 168, 100)
+              //                     : Colors.grey,
+              //                 borderRadius: BorderRadius.circular(12)),
+              //           ),
+              //         ),
+              //       ),
+              ),
             ],
+
+            
           ),
         ),
       ),
