@@ -1,6 +1,6 @@
 # swyft_rails
 
-A new Flutter project.
+A Mobile Implementation of a train ticketing system.
 
 ## Getting Started
 
